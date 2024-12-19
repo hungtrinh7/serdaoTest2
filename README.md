@@ -16,7 +16,6 @@
 3. **Make sure you have Android Studio opened and the emulator launched**
 
 4. **Build and run the app**
-   Run:
    ```bash
    npm start
    ```
