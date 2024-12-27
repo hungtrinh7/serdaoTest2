@@ -44,7 +44,7 @@ export const TransactionProvider = ({ children }: PropsWithChildren) => {
         }
       } catch (error) {
         console.error(
-          "Erreur lors de la récupération des données initiales :",
+          "Error while getting initial data:",
           error
         );
       }
@@ -60,8 +60,8 @@ export const TransactionProvider = ({ children }: PropsWithChildren) => {
     const amountFloat = parseFloat(amount);
 
     if (balance < amountFloat) {
-      console.error(`Fonds insuffisants pour effectuer cette transaction.`);
-      return false; // Retourne false pour signaler l'échec
+      console.error(`Not enough money to do the transaction.`);
+      return false;
     }
 
     const newTransaction: Transaction = {
@@ -89,9 +89,8 @@ export const TransactionProvider = ({ children }: PropsWithChildren) => {
     const saveTransactions = async () => {
       try {
         await storeDataObject(transactions, "transactions");
-        console.log("Transactions sauvegardées", transactions);
       } catch (error) {
-        console.error("Erreur lors de la sauvegarde des transactions :", error);
+        console.error("Error while saving the transactions :", error);
       }
     };
 

@@ -36,7 +36,7 @@ const HomeScreen = ({navigation}: Props) => {
   return (
     <View style={styles.container}>
       <Text style={styles.balanceText}>
-        Current Balance: ${balance.toFixed(2)}
+        Current Balance: ${balance ? balance.toFixed(2) : '1000'}
       </Text>
       <Button
         title="Add Transaction"

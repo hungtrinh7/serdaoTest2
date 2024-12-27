@@ -22,6 +22,10 @@ const TransactionScreen = ({navigation}: Props) => {
   const {beneficiaries} = useBeneficiaries();
 
   const handleTransaction = () => {
+    if (isNaN(amount)) {
+      alert('Please add a valid amount');
+      return;
+    }
     if (selectedBeneficiary === undefined) {
       alert('Please add a beneficiary');
       return;
